@@ -1,5 +1,5 @@
 
-export default function Hero() {
+export default function Header() {
   return (
     <div>
       
