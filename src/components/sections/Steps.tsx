@@ -27,16 +27,3 @@ export default function Steps() {
       </div>
   )
 }
-
-
-export const StatsAndStepsSection: React.FC = () => {
-  return (
-    <section className="section-light flex flex-col gap-16">
-      {/* Statistiques */}
-      
-
-      {/* Comment ça marche (Étapes) */}
-      
-    </section>
-  );
-};

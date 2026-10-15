@@ -1,5 +1,8 @@
+import { Clock, MapPin, type LucideIcon } from "lucide-react";
 import { SITE } from "./site";
-import type { IconName } from "./types";
+import type { IconType } from "react-icons";
+import { FaWhatsapp } from "react-icons/fa";
+
 
 export const CONTACT_SECTION = {
   title: "Contactez-nous",
@@ -7,10 +10,10 @@ export const CONTACT_SECTION = {
 } as const;
 
 // Les 3 lignes à gauche du formulaire (icône + texte)
-export const CONTACT_INFO: { icon: IconName | "WhatsApp"; text: string }[] = [
-  { icon: "WhatsApp", text: SITE.whatsappDisplay },
-  { icon: "MapPin", text: SITE.address },
-  { icon: "Clock", text: SITE.hours },
+export const CONTACT_INFO: { icon: LucideIcon| IconType ; text: string }[] = [
+  { icon: FaWhatsapp, text: SITE.whatsappDisplay },
+  { icon: MapPin, text: SITE.address },
+  { icon: Clock, text: SITE.hours },
 ];
 
 export const CONTACT_FORM = {

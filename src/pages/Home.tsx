@@ -1,6 +1,8 @@
+import { Footer } from "../components/layout/Footer";
 import Header from "../components/layout/Header";
+import { ContactSection } from "../components/sections/Contact";
+import { FaqSection } from "../components/sections/Faq";
 import Hero from "../components/sections/Hero";
-import { PaymentSection } from "../components/sections/Paiement";
 import Stats from "../components/sections/Stats";
 import Steps from "../components/sections/Steps";
 import Terrains from "../components/sections/Terrains";
@@ -21,8 +23,10 @@ export default function Home() {
         </section>
         <Terrains />
         <VillasSection />
-        <PaymentSection />
+        <ContactSection />
+        <FaqSection />
       </main>
+      <Footer />
     </div>
   );
 }

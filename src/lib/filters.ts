@@ -3,9 +3,9 @@ import { BUDGET_RANGES, SURFACE_RANGES } from "../data/terrains";
 import type { Villa, VillaKind } from "../data/villas";
 
 export type TerrainFilters = {
-  quartier: string; // "" = tous
-  surfaceId: string; // "" = toutes
-  budgetId: string; // "" = tous
+  quartier: string;
+  surfaceId: string;
+  budgetId: string;
 };
 
 const inRange = (value: number, range?: Range) =>

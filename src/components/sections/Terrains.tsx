@@ -1,6 +1,6 @@
 import { TERRAINS, TERRAINS_SECTION } from "../../data";
 import { GroundCard } from "../cards/GroundCard";
-import FilterGround from "../form/filterForm";
+import { FilterGround } from "../form/filterForm";
 import { Button } from "../ui/buttons";
 
 export default function Terrains() {
