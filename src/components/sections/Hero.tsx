@@ -14,7 +14,7 @@ export default function Hero() {
     >
       <img
         className="absolute inset-0 -z-20 h-full w-full object-cover object-[62%_center]"
-        src="/images/hero.jpg"
+        src={HERO.image.src}
         alt="Maison en construction sur un chantier"
       />
       <div className="absolute inset-0 -z-10 bg-linear-to-r from-brand-primary via-brand-primary/85 to-brand-primary/40 md:to-brand-primary/10" />

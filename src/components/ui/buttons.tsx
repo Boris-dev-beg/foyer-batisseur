@@ -1,7 +1,15 @@
 import type { LucideIcon } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
-export function WhatsApp({ href, label, className }: { href: string; label: string, className?: string}) {
+export function WhatsApp({
+  href,
+  label,
+  className,
+}: {
+  href: string;
+  label: string;
+  className?: string;
+}) {
   return (
     <a
       className={`btn btn-whatsapp max-w-3xs ${className}`}
@@ -45,7 +53,7 @@ export function Button({
   label,
 }: {
   className: string;
-  href: string;
+  href?: string;
   label: string;
 }) {
   return (
@@ -54,3 +62,5 @@ export function Button({
     </a>
   );
 }
+
+

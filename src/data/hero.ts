@@ -8,7 +8,7 @@ export const HERO = {
   primaryCta: { label: "Voir les terrains", href: "#terrains" },
   secondaryCtaLabel: "Écrire sur WhatsApp",
   image: {
-    src: "/images/hero/chantier-hero.webp",
+    src: "/images/hero/hero.jpg",
     alt: "Chantier d'une maison en parpaings avec murs et dalle, terre rouge au sol",
   },
   trust: [

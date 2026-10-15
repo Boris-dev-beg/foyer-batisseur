@@ -17,7 +17,7 @@
 @layer components {
   /* ! BUTTON */
   .btn{
-    @apply inline-flex font-medium px-6 py-3 rounded-sm transition-all duration-200 gap-2
+    @apply inline-flex justify-center font-medium px-6 py-3 rounded-sm transition-all duration-200 gap-2
   }
   .btn-primary {
     @apply bg-brand-secondary hover:bg-brand-secondary-hover focus:outline-none focus:ring-4 focus:ring-brand-secondary/30 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed text-white shadow-sm;
@@ -59,7 +59,7 @@
   }
 
   .section-title {
-    @apply text-3xl font-bold text-brand-primary mb-2;
+    @apply text-4xl font-bold text-brand-primary mb-2;
   }
   .section-subtitle {
     @apply text-brand-muted mb-8;

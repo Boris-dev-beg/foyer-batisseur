@@ -1,11 +1,9 @@
-// Données FICTIVES. Quartiers à vérifier/adapter toi-même.
-// Images : /public/images/terrains/terrain-01.webp … terrain-06.webp (ratio 4:3)
 
 export type Terrain = {
   id: string;
-  surface: number; // m²
+  surface: number;
   quartier: string;
-  price: number; // FCFA
+  price: number;
   titled: boolean;
   image: string;
   alt: string;
@@ -15,7 +13,7 @@ export type Range = {
   id: string;
   label: string;
   min: number;
-  max: number; // utilise Infinity pour « sans limite »
+  max: number;
 };
 
 export const TERRAINS_SECTION = {
@@ -89,13 +87,12 @@ export const TERRAINS: Terrain[] = [
 
 export const terrainTitle = (t: Terrain) => `Terrain ${t.surface} m²`;
 
-// Liste des quartiers générée automatiquement (triée)
+// ? Liste des quartiers
 export const QUARTIERS: string[] = [
   ...new Set(TERRAINS.map((t) => t.quartier)),
 ].sort((a, b) => a.localeCompare(b, "fr"));
 
-// ⚠️ Les libellés des tranches ci-dessous sont les seuls textes « ajoutés »
-// par rapport à la maquette : ils sont nécessaires pour que les filtres fonctionnent.
+// ? Les libellés des tranches nécessaires pour que les filtres fonctionnent.
 export const SURFACE_RANGES: Range[] = [
   { id: "s1", label: "Jusqu'à 400 m²", min: 0, max: 400 },
   { id: "s2", label: "De 401 à 600 m²", min: 401, max: 600 },

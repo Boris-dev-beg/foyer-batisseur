@@ -9,7 +9,7 @@ export function whatsappLink(message: string): string {
   return `https://wa.me/${SITE.whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
 
-// Boutons « normaux » du site de démo
+// Boutons « normaux » 
 export const whatsappGeneral = () => whatsappLink(WHATSAPP_MESSAGES.general);
 export const whatsappQuote = () => whatsappLink(WHATSAPP_MESSAGES.quote);
 

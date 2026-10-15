@@ -12,13 +12,13 @@ const link = whatsappGeneral();
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-50 flex min-h-16 max-h-20 items-center justify-center backdrop-blur-md w-screen">
+    <header className="sticky top-0 z-50 flex min-h-16 max-h-20 items-center justify-center backdrop-blur-md max-w-screen bg-brand-primary/40">
       <div className="mx-auto  flex min-h-16 items-center justify-between gap-3 sm:gap-6 w-full wrapper">
         <Logo_header />
 
         <div className="flex gap-4">
           <Navbar />
-          <WhatsApp href={link} label={NAV_WHATSAPP_LABEL} className="hidden md:inline-flex" />
+          <WhatsApp href={link} label={NAV_WHATSAPP_LABEL} className="hidden lg:inline-flex" />
 
           <ResponsiveButton isOpen={isOpen} setIsOpen={setIsOpen} icon={Menu} />
         </div>
