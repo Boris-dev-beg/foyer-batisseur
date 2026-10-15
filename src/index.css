@@ -16,14 +16,17 @@
 
 @layer components {
   /* ! BUTTON */
+  .btn{
+    @apply inline-flex font-medium px-6 py-3 rounded-sm transition-all duration-200 gap-2
+  }
   .btn-primary {
-    @apply bg-brand-secondary hover:bg-brand-secondary-hover focus:outline-none focus:ring-4 focus:ring-brand-secondary/30 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed text-white font-medium px-6 py-3 rounded-xl transition-all duration-200 shadow-sm;
+    @apply bg-brand-secondary hover:bg-brand-secondary-hover focus:outline-none focus:ring-4 focus:ring-brand-secondary/30 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed text-white shadow-sm;
   }
   .btn-secondary {
-    @apply border border-brand-primary/20 hover:border-brand-primary focus:outline-none focus:ring-4 focus:ring-brand-primary/10 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed text-brand-primary font-medium px-6 py-3 rounded-xl transition-all duration-200 bg-transparent;
+    @apply border border-brand-primary/20 hover:border-brand-primary focus:outline-none focus:ring-4 focus:ring-brand-primary/10 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed text-brand-primary bg-transparent;
   }
-  .btn-whatsapp{
-    @apply inline-flex min-h-10 shrink-0 items-center justify-center gap-2 rounded-lg bg-brand-accent px-3 text-xs font-medium text-white sm:px-4 sm:text-sm
+  .btn-whatsapp {
+    @apply min-h-10 shrink-0 items-center justify-center bg-brand-accent text-white;
   }
 
   /* ! CARD */

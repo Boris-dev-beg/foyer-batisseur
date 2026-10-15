@@ -1,5 +1,5 @@
 import BenefitCard from "../shared/BenefitCard";
-import { WhatsApp } from "../ui/buttons";
+import { Button, WhatsApp } from "../ui/buttons";
 import { whatsappGeneral } from "../../lib/whatsapp";
 import { HERO } from "../../data";
 
@@ -20,29 +20,25 @@ export default function Hero() {
       <div className="absolute inset-0 -z-10 bg-linear-to-r from-brand-primary via-brand-primary/85 to-brand-primary/40 md:to-brand-primary/10" />
 
       <div className="mx-auto grid min-h-svh w-full max-w-7xl grid-rows-[auto_minmax(0,1fr)_auto] px-4 py-4 sm:px-8 lg:px-10">
-        {/* <Header /> */}
-
         <div className="max-w-155 self-center py-12 sm:py-16">
           <p className="mb-3 text-sm font-semibold uppercase text-brand-secondary">
-            Promoteur immobilier - Bafousam
+            {HERO.badge}
           </p>
           <h1
             id="hero-title"
             className="max-w-152.5 text-[clamp(2.375rem,5vw,3rem)] leading-[1.14] font-bold"
           >
-            Terrains titrés et construction clé en main à Bafoussam
+            {HERO.title}
           </h1>
           <p className="mt-3 mb-4 max-w-142.5 text-base leading-relaxed text-white/85 sm:text-lg">
-            De l’achat du terrain à la remise des clés, suivez votre chantier en
-            photos, même depuis l’étranger.
+            {HERO.subtitle}
           </p>
           <div className="flex flex-wrap gap-4">
-            <a
-              className="inline-flex min-h-14 items-center justify-center rounded-lg bg-brand-secondary px-7 text-base font-semibold text-brand-primary transition hover:-translate-y-0.5 hover:bg-brand-secondary-hover"
-              href="#terrains"
-            >
-              Voir les terrains
-            </a>
+            <Button
+              href={HERO.primaryCta.href}
+              label={HERO.primaryCta.label}
+              className="btn-primary"
+            />
             <WhatsApp href={href} label={HERO.secondaryCtaLabel} />
           </div>
         </div>
@@ -51,14 +47,14 @@ export default function Hero() {
           className="grid grid-cols-1 gap-3 pb-2 md:grid-cols-3 md:gap-6"
           aria-label="Nos engagements"
         >
-          {HERO.trust.map(({ icon, title, text }, index) =>  (
-              <BenefitCard
-                key={index}
-                icon={icon}
-                title={title}
-                description={text}
-              />
-            ))}
+          {HERO.trust.map(({ icon, title, text }, index) => (
+            <BenefitCard
+              key={index}
+              icon={icon}
+              title={title}
+              description={text}
+            />
+          ))}
         </div>
       </div>
     </section>

@@ -3,7 +3,7 @@ import Hero from "../components/sections/Hero";
 
 export default function Home() {
   return (
-    <div className="bg-brand-primary/95">
+    <div className="bg-brand-primary/95 overflow-hidden">
       <Header />
       <main>
         <Hero />
