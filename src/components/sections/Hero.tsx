@@ -1,17 +1,14 @@
-import { Camera, ShieldCheck, WalletCards } from "lucide-react";
 import BenefitCard from "../shared/BenefitCard";
-import Navbar from "../shared/Navbar";
-import { heroBenefits, whatsappUrl } from "../../data/home";
+import { WhatsApp } from "../ui/buttons";
+import { whatsappGeneral } from "../../lib/whatsapp";
+import { HERO } from "../../data";
 
-const benefitIcons = {
-  title: ShieldCheck,
-  payment: Camera,
-  tracking: WalletCards,
-};
+const href = whatsappGeneral();
 
 export default function Hero() {
   return (
     <section
+      id="accueil"
       className="relative isolate grid min-h-svh grid-rows-[auto_minmax(0,1fr)_auto] overflow-hidden text-white"
       aria-labelledby="hero-title"
     >
@@ -23,7 +20,7 @@ export default function Hero() {
       <div className="absolute inset-0 -z-10 bg-linear-to-r from-brand-primary via-brand-primary/85 to-brand-primary/40 md:to-brand-primary/10" />
 
       <div className="mx-auto grid min-h-svh w-full max-w-7xl grid-rows-[auto_minmax(0,1fr)_auto] px-4 py-4 sm:px-8 lg:px-10">
-        <Navbar />
+        {/* <Header /> */}
 
         <div className="max-w-155 self-center py-12 sm:py-16">
           <p className="mb-3 text-sm font-semibold uppercase text-brand-secondary">
@@ -46,19 +43,7 @@ export default function Hero() {
             >
               Voir les terrains
             </a>
-            <a
-              className="inline-flex min-h-14 items-center justify-center gap-3 rounded-lg border border-white bg-brand-primary/30 px-6 text-base transition hover:bg-brand-primary/60"
-              href={whatsappUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                className="size-7"
-                src="https://cdn.simpleicons.org/whatsapp/FFFFFF"
-                alt=""
-              />
-              Écrire sur WhatsApp
-            </a>
+            <WhatsApp href={href} label={HERO.secondaryCtaLabel} />
           </div>
         </div>
 
@@ -66,18 +51,14 @@ export default function Hero() {
           className="grid grid-cols-1 gap-3 pb-2 md:grid-cols-3 md:gap-6"
           aria-label="Nos engagements"
         >
-          {heroBenefits.map(({ id, title, description }) => {
-            const Icon = benefitIcons[id];
-
-            return (
+          {HERO.trust.map(({ icon, title, text }, index) =>  (
               <BenefitCard
-                key={id}
-                icon={<Icon aria-hidden="true" />}
+                key={index}
+                icon={icon}
                 title={title}
-                description={description}
+                description={text}
               />
-            );
-          })}
+            ))}
         </div>
       </div>
     </section>
