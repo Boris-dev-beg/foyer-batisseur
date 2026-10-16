@@ -51,11 +51,11 @@
 
   /* ! SECTION */
   .section-light {
-    @apply bg-brand-bg py-16 px-4 md:px-8;
+    @apply bg-brand-bg py-16 md:px-8;
   }
 
   .section-dark {
-    @apply bg-brand-primary text-white py-16 px-4 md:px-8;
+    @apply bg-brand-primary text-white py-16 md:px-8;
   }
 
   .section-title {

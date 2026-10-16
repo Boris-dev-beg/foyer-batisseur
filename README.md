@@ -1,75 +1,58 @@
-# React + TypeScript + Vite
+# Foyer Bâtisseur
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site vitrine pour Foyer Bâtisseur, promoteur immobilier basé à Bafoussam, au Cameroun. La page présente les terrains, les modèles de villas et les étapes d’un projet immobilier, avec des moyens de contact par WhatsApp.
 
-Currently, two official plugins are available:
+> Cette version est une démonstration : les contenus et données présentés sont fictifs. Elle ne constitue pas une plateforme de transaction ou de suivi de chantier connectée à un service backend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Fonctionnalités
 
-## React Compiler
+- Présentation de l’entreprise et de ses engagements.
+- Sections consacrées aux terrains, aux villas et aux étapes d’un projet.
+- Coordonnées, questions fréquentes et liens WhatsApp préremplis.
+- Interface responsive réalisée avec Tailwind CSS v4.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technologies
 
-## Expanding the ESLint configuration
+- React 19 et TypeScript
+- Vite
+- Tailwind CSS v4 et son plugin Vite
+- React Router
+- Lucide React et React Icons
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Démarrer le projet
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Prérequis : Node.js et npm.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Vite affiche l’adresse locale du serveur dans le terminal.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Commandes
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm run dev      # serveur de développement
+npm run build    # vérification TypeScript et compilation de production
+npm run preview  # prévisualisation du build
+npm run lint     # vérification ESLint
 ```
+
+## Organisation du code
+
+```text
+src/
+├── components/
+│   ├── layout/       # en-tête et pied de page
+│   ├── sections/     # sections de la page d’accueil
+│   ├── shared/       # composants partagés
+│   └── ui/           # éléments d’interface
+├── data/             # contenus, libellés et configuration du site
+├── pages/            # composition des pages
+├── App.tsx           # composant racine
+└── index.css         # import Tailwind et variables de thème
+public/images/        # logos et visuels du site
+```
+
+Les exports de `src/data/index.ts` permettent d’importer les données communes depuis le dossier `data`.
