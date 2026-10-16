@@ -1,4 +1,3 @@
-
 export type VillaKind = "Plain-pied" | "À étage";
 
 export type Villa = {
@@ -25,7 +24,7 @@ export const VILLAS_SECTION = {
   },
 } as const;
 
-// ? Onglets de filtre 
+// ? Onglets de filtre
 export const VILLA_TABS: ("Toutes" | VillaKind)[] = [
   "Toutes",
   "Plain-pied",
@@ -40,7 +39,7 @@ export const VILLAS: Villa[] = [
     bedrooms: 3,
     surface: 120,
     priceFrom: 18_000_000,
-    image: "/images/villas/ebene.webp",
+    image: "/images/villas/ebene.jpg",
     alt: "Villa de plain-pied en parpaings enduits avec toit en tôle et petit jardin",
   },
   {
@@ -50,7 +49,7 @@ export const VILLAS: Villa[] = [
     bedrooms: 4,
     surface: 150,
     priceFrom: 24_000_000,
-    image: "/images/villas/azur.webp",
+    image: "/images/villas/azur.jpg",
     alt: "Villa de plain-pied avec véranda, murs enduits et jardin",
   },
   {
@@ -60,7 +59,7 @@ export const VILLAS: Villa[] = [
     bedrooms: 5,
     surface: 210,
     priceFrom: 38_000_000,
-    image: "/images/villas/savane.webp",
+    image: "/images/villas/savane.jpg",
     alt: "Villa à étage avec balcon, murs enduits et toit en tôle",
   },
 ];

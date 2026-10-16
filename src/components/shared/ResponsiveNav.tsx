@@ -45,7 +45,7 @@ export default function ResponsiveNav({
           {NAV_LINKS.map(({ label, href }) => (
             <a
               key={href}
-              className={`relative w-fit py-2 text-sm text-white after:absolute after:right-0 after:bottom-0 after:left-0 after:h-0.75 after:origin-left after:scale-x-0 after:bg-brand-secondary after:transition-transform hover:after:scale-x-100 md:whitespace-nowrap ${activeLink === href ? "font-semibold after:scale-x-100" : ""}`}
+              className={`relative w-2/8 py-2 text-sm text-white after:absolute after:right-0 after:bottom-0 after:left-0 after:h-0.75 after:origin-left after:scale-x-0 after:bg-brand-secondary after:transition-transform hover:after:scale-x-100 md:whitespace-nowrap ${activeLink === href ? "font-semibold after:scale-x-100" : ""}`}
               href={href}
               aria-current={activeLink === href ? "page" : undefined}
               onClick={() => handleClick(href)}

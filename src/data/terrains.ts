@@ -1,4 +1,3 @@
-
 export type Terrain = {
   id: string;
   surface: number;
@@ -35,7 +34,7 @@ export const TERRAINS: Terrain[] = [
     quartier: "Tamdja",
     price: 9_500_000,
     titled: true,
-    image: "/images/terrains/terrain-01.webp",
+    image: "/images/terrains/terrain-01.jpg",
     alt: "Terrain plat en terre rouge avec une route en terre au fond",
   },
   {
@@ -44,7 +43,7 @@ export const TERRAINS: Terrain[] = [
     quartier: "Djeleng",
     price: 12_000_000,
     titled: true,
-    image: "/images/terrains/terrain-02.webp",
+    image: "/images/terrains/terrain-02.jpg",
     alt: "Terrain légèrement en pente avec des bananiers au fond",
   },
   {
@@ -53,7 +52,7 @@ export const TERRAINS: Terrain[] = [
     quartier: "Banengo",
     price: 15_000_000,
     titled: true,
-    image: "/images/terrains/terrain-03.webp",
+    image: "/images/terrains/terrain-03.jpg",
     alt: "Terrain nu avec des bornes en béton",
   },
   {
@@ -62,7 +61,7 @@ export const TERRAINS: Terrain[] = [
     quartier: "Kamkop",
     price: 8_500_000,
     titled: true,
-    image: "/images/terrains/terrain-04.webp",
+    image: "/images/terrains/terrain-04.jpg",
     alt: "Terrain plat à la végétation basse",
   },
   {
@@ -71,7 +70,7 @@ export const TERRAINS: Terrain[] = [
     quartier: "Tamdja",
     price: 22_000_000,
     titled: true,
-    image: "/images/terrains/terrain-05.webp",
+    image: "/images/terrains/terrain-05.jpg",
     alt: "Grand terrain en terre rouge avec des maisons au loin",
   },
   {
@@ -80,7 +79,7 @@ export const TERRAINS: Terrain[] = [
     quartier: "Djeleng",
     price: 7_500_000,
     titled: true,
-    image: "/images/terrains/terrain-06.webp",
+    image: "/images/terrains/terrain-06.jpg",
     alt: "Terrain d'angle entre deux routes en terre",
   },
 ];
@@ -101,6 +100,16 @@ export const SURFACE_RANGES: Range[] = [
 
 export const BUDGET_RANGES: Range[] = [
   { id: "b1", label: "Moins de 10 000 000 FCFA", min: 0, max: 9_999_999 },
-  { id: "b2", label: "De 10 à 15 millions FCFA", min: 10_000_000, max: 15_000_000 },
-  { id: "b3", label: "Plus de 15 000 000 FCFA", min: 15_000_001, max: Infinity },
+  {
+    id: "b2",
+    label: "De 10 à 15 millions FCFA",
+    min: 10_000_000,
+    max: 15_000_000,
+  },
+  {
+    id: "b3",
+    label: "Plus de 15 000 000 FCFA",
+    min: 15_000_001,
+    max: Infinity,
+  },
 ];
