@@ -8,15 +8,15 @@ import {
 import { FaWhatsapp } from "react-icons/fa";
 import { whatsappContactForm } from "../../lib/whatsapp";
 
-type InterestOption = typeof INTEREST_OPTIONS[number];
+type InterestOption = (typeof INTEREST_OPTIONS)[number];
 
-export function ContactSection () {
+export function ContactSection() {
   const [formData, setFormData] = useState<{
-  name: string;
-  phone: string;
-  interest: InterestOption;
-  message: string;
-}>({
+    name: string;
+    phone: string;
+    interest: InterestOption;
+    message: string;
+  }>({
     name: "",
     phone: "",
     interest: INTEREST_OPTIONS[0],
@@ -25,9 +25,7 @@ export function ContactSection () {
 
   const handleSubmit = (e: SubmitEvent) => {
     e.preventDefault();
-    console.log("Données du formulaire :", formData);
-
-    const cont = whatsappContactForm(formData)
+    window.location.assign(whatsappContactForm(formData));
   };
 
   return (
@@ -107,11 +105,14 @@ export function ContactSection () {
               <label htmlFor="interest" className="label">
                 {CONTACT_FORM.fields.interest}
               </label>
-              <select 
+              <select
                 id="interest"
                 value={formData.interest}
                 onChange={(e) =>
-                  setFormData({ ...formData, interest: e.target.value as InterestOption })
+                  setFormData({
+                    ...formData,
+                    interest: e.target.value as InterestOption,
+                  })
                 }
                 className="input cursor-pointer"
               >
@@ -149,4 +150,4 @@ export function ContactSection () {
       </div>
     </section>
   );
-};
+}
