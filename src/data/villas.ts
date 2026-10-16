@@ -1,5 +1,3 @@
-// Images : /public/images/villas/ebene.webp, azur.webp, savane.webp (ratio 4:3)
-// Photos réalistes de maisons en parpaings enduits, toit en tôle, style courant au Cameroun.
 
 export type VillaKind = "Plain-pied" | "À étage";
 
@@ -8,8 +6,8 @@ export type Villa = {
   name: string;
   kind: VillaKind;
   bedrooms: number;
-  surface: number; // m²
-  priceFrom: number; // FCFA
+  surface: number;
+  priceFrom: number;
   image: string;
   alt: string;
 };
@@ -27,7 +25,7 @@ export const VILLAS_SECTION = {
   },
 } as const;
 
-// Onglets de filtre : « Toutes » + les deux types
+// ? Onglets de filtre 
 export const VILLA_TABS: ("Toutes" | VillaKind)[] = [
   "Toutes",
   "Plain-pied",
@@ -67,5 +65,5 @@ export const VILLAS: Villa[] = [
   },
 ];
 
-// « Plain-pied · 3 chambres »
+// ? Subtilte
 export const villaSubtitle = (v: Villa) => `${v.kind} · ${v.bedrooms} chambres`;

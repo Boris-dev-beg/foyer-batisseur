@@ -4,7 +4,9 @@ import { GroundCard } from "../cards/GroundCard";
 import { FilterGround } from "../form/filterForm";
 import { Button } from "../ui/buttons";
 import { filterGround } from "../../lib/filters";
+import { whatsappQuote } from "../../lib/whatsapp";
 
+const href = whatsappQuote()
 export default function Terrains() {
   const [neighborhoodFilter, setNeighborhoodFilter] = useState("");
   const [budgetIdFilter, setBudgetIdFilter] = useState("");
@@ -34,15 +36,15 @@ export default function Terrains() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10 py-5 border-t-2 border-brand-muted">
           {groundToShow.map((ground) => (
-            <GroundCard ground={ground} />
+            <GroundCard ground={ground} key={ground.id} />
           ))}
         </div>
 
         <div className="flex items-center justify-center">
           <Button
-            href={""}
+            href={href}
             label={TERRAINS_SECTION.moreCta}
-            className="btn-secondary px-25"
+            className="btn-secondary sm:px-25"
           />
         </div>
       </div>

@@ -39,7 +39,7 @@ export const GroundCard = ({ ground }: { ground: Terrain }) => {
         </div>
 
         <div className="space-y-4">
-          <div className="text-3xl font-black text-brand-primary">
+          <div className="text-2xl sm:text-3xl font-black text-brand-primary">
             {formatFCFA(ground.price)}
           </div>
           <Button

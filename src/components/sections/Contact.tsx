@@ -1,5 +1,4 @@
-import React, { useState, type SubmitEvent } from "react";
-import { MessageCircle } from "lucide-react";
+import { useState, type SubmitEvent } from "react";
 import {
   CONTACT_FORM,
   CONTACT_INFO,
@@ -7,10 +6,11 @@ import {
   INTEREST_OPTIONS,
 } from "../../data";
 import { FaWhatsapp } from "react-icons/fa";
+import { whatsappContactForm } from "../../lib/whatsapp";
 
 type InterestOption = typeof INTEREST_OPTIONS[number];
 
-export const ContactSection: React.FC = () => {
+export function ContactSection () {
   const [formData, setFormData] = useState<{
   name: string;
   phone: string;
@@ -26,12 +26,14 @@ export const ContactSection: React.FC = () => {
   const handleSubmit = (e: SubmitEvent) => {
     e.preventDefault();
     console.log("Données du formulaire :", formData);
+
+    const cont = whatsappContactForm(formData)
   };
 
   return (
-    <section className="section-light">
+    <section className="section-light" id="contact">
       <div className="wrapper mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        {/* Informations de contact (colonne de gauche) */}
+        {/* Left side */}
         <div className="lg:col-span-5 space-y-6">
           <div>
             <h2 className="section-title">{CONTACT_SECTION.title}</h2>
@@ -47,7 +49,7 @@ export const ContactSection: React.FC = () => {
                 >
                   <div className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center shrink-0 shadow-sm text-brand-secondary">
                     {info.icon === FaWhatsapp ? (
-                      <MessageCircle className="w-5 h-5 text-brand-accent fill-current" />
+                      <FaWhatsapp className="w-5 h-5 text-brand-accent" />
                     ) : (
                       <IconComponent className="w-5 h-5" />
                     )}
@@ -61,7 +63,7 @@ export const ContactSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Formulaire de contact (colonne de droite) */}
+        {/* Right side (Form) */}
         <div className="lg:col-span-7 card bg-[#EFECE6]/50 sm:p-8">
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Nom complet */}

@@ -4,33 +4,33 @@ import { terrainTitle } from "../data/terrains";
 import type { Villa } from "../data/villas";
 import { formatFCFA } from "./format";
 
-/** Lien WhatsApp avec message pré-rempli (fonctionne sur mobile et ordinateur). */
+/** Lien WhatsApp avec message pré-rempli. */
 export function whatsappLink(message: string): string {
   return `https://wa.me/${SITE.whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
 
-// Boutons « normaux » 
+// ? Boutons « normaux » 
 export const whatsappGeneral = () => whatsappLink(WHATSAPP_MESSAGES.general);
 export const whatsappQuote = () => whatsappLink(WHATSAPP_MESSAGES.quote);
 
-// Bandeau de démo : message d'un futur client pour TOI
+// ? Bandeau de démo
 export const whatsappProspect = () => whatsappLink(WHATSAPP_MESSAGES.prospect);
 
-// Carte terrain : « Je suis intéressé »
+// ? Carte terrain
 export function whatsappTerrain(t: Terrain): string {
   return whatsappLink(
     `${DEMO_TAG} Bonjour, je suis intéressé par le ${terrainTitle(t)} à ${t.quartier} (${formatFCFA(t.price)}).`,
   );
 }
 
-// Carte villa : « Voir le modèle »
+// ? Carte villa 
 export function whatsappVilla(v: Villa): string {
   return whatsappLink(
     `${DEMO_TAG} Bonjour, je souhaite en savoir plus sur le ${v.name} (${v.kind}, ${v.bedrooms} chambres).`,
   );
 }
 
-// Formulaire de contact : ouvre WhatsApp avec les informations saisies
+// ? Formulaire de contact : ouvre WhatsApp avec les informations saisies
 export function whatsappContactForm(data: {
   name: string;
   phone: string;

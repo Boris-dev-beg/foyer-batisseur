@@ -28,7 +28,7 @@ export const WHATSAPP_MESSAGES = {
     "Bonjour, j'ai vu la démo Foyer Bâtisseur et je souhaite un site pour mon entreprise.",
 } as const;
 
-// Bandeau fixe en haut du site (c'est lui qui peut te rapporter un client)
+// Bandeau fixe en haut du site 
 export const DEMO_BANNER = {
   text: `Démo créée par ${SITE.creator}. Un site comme celui-ci pour votre entreprise ?`,
   cta: "Écrivez-moi sur WhatsApp",

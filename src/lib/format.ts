@@ -1,4 +1,4 @@
-// 9500000 → "9 500 000 FCFA" (espaces insécables : le montant ne se coupe jamais en deux lignes)
+// 9500000 → "9 500 000 FCFA"
 export function formatFCFA(value: number): string {
   const digits = Math.round(value)
     .toString()

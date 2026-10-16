@@ -1,8 +1,11 @@
 import { LayoutGrid } from "lucide-react";
 import { VILLAS_SECTION, villaSubtitle, type Villa } from "../../data";
 import { formatFCFA } from "../../lib/format";
+import { Button } from "../ui/buttons";
+import { whatsappVilla } from "../../lib/whatsapp";
 
 export const VillaCard = ({ villa }: { villa: Villa }) => {
+  const href = whatsappVilla(villa);
   return (
     <div key={villa.id} className="card p-0! overflow-hidden flex flex-col">
       {/* Image */}
@@ -15,11 +18,11 @@ export const VillaCard = ({ villa }: { villa: Villa }) => {
       </div>
 
       {/* Card content */}
-      <div className="p-6 flex flex-col grow justify-between gap-6">
-        <div className="space-y-3">
-          <h3 className="text-xl font-bold text-brand-primary">{villa.name}</h3>
-          <p className="text-sm text-brand-muted">{villaSubtitle(villa)}</p>
-          <div className="flex items-center gap-2 text-sm text-brand-primary font-medium">
+      <div className="p-6 flex flex-col grow justify-between gap-2">
+        <div className="space-y-1">
+          <h3 className="text-2xl font-bold text-brand-primary">{villa.name}</h3>
+          <p className="text-brand-muted">{villaSubtitle(villa)}</p>
+          <div className="flex items-center gap-2 text-lg text-brand-primary font-semibold">
             <LayoutGrid className="w-4 h-4 text-brand-secondary" />
             <span>{villa.surface} m²</span>
           </div>
@@ -27,17 +30,19 @@ export const VillaCard = ({ villa }: { villa: Villa }) => {
 
         <div className="space-y-4">
           <div>
-            <span className="text-xs text-brand-muted block">
+            <span className="text-brand-muted block font-medium">
               {VILLAS_SECTION.priceLabel}
             </span>
-            <span className="text-lg font-bold text-brand-primary">
+            <span className="text-2xl sm:text-3xl font-bold text-brand-primary">
               {formatFCFA(villa.priceFrom)}
             </span>
           </div>
 
-          <button type="button" className="btn btn-primary w-full">
-            {VILLAS_SECTION.cardCta}
-          </button>
+          <Button
+            className="btn btn-primary w-full"
+            label={VILLAS_SECTION.cardCta}
+            href={href}
+          />
         </div>
       </div>
     </div>

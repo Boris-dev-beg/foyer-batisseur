@@ -3,7 +3,9 @@ import { useState } from "react";
 import { FilterVillas } from "../form/filterForm";
 import { VillaCard } from "../cards/VillaCard";
 import { Button } from "../ui/buttons";
+import { whatsappQuote } from "../../lib/whatsapp";
 
+const href = whatsappQuote()
 export function VillasSection() {
   const [activeTab, setActiveTab] = useState<"Toutes" | VillaKind>("Toutes");
 
@@ -26,7 +28,7 @@ export function VillasSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {filteredVillas.map((villa: Villa) => (
-            <VillaCard villa={villa} />
+            <VillaCard villa={villa} key={villa.id} />
           ))}
         </div>
 
@@ -44,7 +46,7 @@ export function VillasSection() {
           <Button
             className="btn btn-primary shrink-0"
             label={VILLAS_SECTION.banner.cta}
-            href=""
+            href={href}
           />
         </div>
       </div>

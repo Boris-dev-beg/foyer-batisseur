@@ -1,11 +1,11 @@
 
 export const NAV_LINKS = [
-  { label: "Accueil", href: "#accueil", current: true },
-  { label: "Terrains", href: "#terrains", current: false },
-  { label: "Villas", href: "#villas", current: false },
-  { label: "Suivi de chantier", href: "#suivi", current: false },
-  { label: "Paiement", href: "#paiement", current: false },
-  { label: "Contact", href: "#contact", current: false },
+  { label: "Accueil", href: "#accueil"},
+  { label: "Terrains", href: "#terrains" },
+  { label: "Villas", href: "#villas" },
+  { label: "Suivi de chantier", href: "#suivi" },
+  { label: "Contact", href: "#contact" },
+  { label: "faq", href: "#faq" },
 ] as const;
 
 export const NAV_WHATSAPP_LABEL = "WhatsApp";
