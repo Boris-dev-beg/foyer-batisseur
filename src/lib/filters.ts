@@ -11,7 +11,7 @@ export type TerrainFilters = {
 const inRange = (value: number, range?: Range) =>
   !range || (value >= range.min && value <= range.max);
 
-export function filterTerrains(list: Terrain[], f: TerrainFilters): Terrain[] {
+export function filterGround(list: Terrain[], f: TerrainFilters): Terrain[] {
   const surface = SURFACE_RANGES.find((r) => r.id === f.surfaceId);
   const budget = BUDGET_RANGES.find((r) => r.id === f.budgetId);
   return list.filter(

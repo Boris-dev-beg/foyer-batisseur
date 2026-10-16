@@ -7,28 +7,48 @@ import {
   type VillaKind,
 } from "../../data";
 import { Button } from "../ui/buttons";
-import { SelectGround, SelectOther } from "../ui/select";
+import { SelectNeighborhood, SelectOther } from "../ui/select";
 import { InputContainer } from "./inputContainer";
 
-export function FilterGround() {
+export function FilterGround({
+  neighborhood,
+  budget,
+  surface,
+  setBudget,
+  setNeighborhood,
+  setSurface,
+}: {
+  neighborhood: string;
+  budget: string;
+  surface: string;
+  setSurface: (val: string) => void;
+  setBudget: (val: string) => void;
+  setNeighborhood: (val: string) => void;
+}) {
   return (
     <form className="flex flex-col md:flex-row md:gap-3 gap-1">
       <InputContainer>
-        <SelectGround
+        <SelectNeighborhood
           firstOpt={TERRAINS_SECTION.allQuartiers}
-          Grounds={QUARTIERS}
+          Neighborhoods={QUARTIERS}
+          neighborhood={neighborhood}
+          setNeighborhood={setNeighborhood}
         />
       </InputContainer>
       <InputContainer>
         <SelectOther
           firstOpt={TERRAINS_SECTION.allSurfaces}
           Tab={SURFACE_RANGES}
+          filterValue={surface}
+          setFilterValue={setSurface}
         />
       </InputContainer>
       <InputContainer>
         <SelectOther
           firstOpt={TERRAINS_SECTION.allBudgets}
           Tab={BUDGET_RANGES}
+          filterValue={budget}
+          setFilterValue={setBudget}
         />
       </InputContainer>
 
